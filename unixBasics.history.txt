@@ -1,0 +1,16 @@
+  581  git add oops2
+  582  git commit -m 'will be deleated'
+  583  git push
+  584  rm oops2
+  585  ls
+  586  git add oops2
+  587  git commit -m 'removing oops2'
+  588  git push
+  589  vi never
+  590  git add never
+  591  git status
+  592  git reset never
+  593  git status
+  594  man rm
+  595  man cp
+  596  echo history
