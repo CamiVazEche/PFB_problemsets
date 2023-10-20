@@ -20,22 +20,30 @@ favs_dict ['organism'] = 'Elephant'
 print(favs_dict)
 print('')
 
-fav_thing = 'organism'
-print(favs_dict[fav_thing])
-print('')
+#fav_thing = 'organism'
+#print(favs_dict[fav_thing])
+#print('')
 
 #Point 6
-for thing in favs_dict:
-	result = favs_dict[thing]
-	print (f'{thing:>8}', result)
-print('')
+#for thing in favs_dict:
+#	result = favs_dict[thing]
+#	print (f'{thing:>8}', result)
+#print('')
 
 #Point 7
-fav_thing = favs_dict[sys.argv[1]]
-print(fav_thing)
-print ('')
+#fav_thing = favs_dict[sys.argv[1]]
+#print(fav_thing)
+#print ('')
 
 #Point 8
-print('This are the keys: ')
-for thing in favs_dict:
-	print(thing)
+#print('This are the keys: ')
+#for thing in favs_dict:
+#	print(thing)
+
+#Point 9
+#favs_dict['organism'] = 'dog'
+#print(favs_dict)
+
+fav_thing = favs_dict[sys.argv[1]]
+favs_dict[sys.argv[1]] = 'Blackbird'
+print(favs_dict)
