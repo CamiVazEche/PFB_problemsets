@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+### GENEME ASSEMBY WORKSHOP, EXERCICE A ###
+### First I build a dictionary from the FASTA file 
+
+fastaDict = {}
+
+with open("ecoli_0.25.contigs.fasta", "r") as ecoli_contigs:
+	for line in ecoli_contigs:
+		line = line.rstrip()
+		if ">" in line:
+			contig = line
+			fastaDict[contig] = ""
+		else:
+			seq = line
+			fastaDict[contig] += seq
+
+#not ideal but I print to check that dict was created
+#print(fastaDict)
+
+### Question 1: Count number of contigs
+total_contigs = len(fastaDict)
+print(f'The total number of contigs is: {total_contigs}')
+
+### Question 2: find shortest and longest contig
+length_max = 0
+length_min = 100000000000000000000
+for key in fastaDict.keys():
+	len_seq = len(fastaDict[key])
+	if len_seq >= length_max:
+			length_max = len_seq
+			key_max = key
+	elif len_seq <= length_min:
+			length_min = len_seq
+			key_min = key
+	else:
+		continue
+
+print(f'The shortest contig is ID: {key_min} with {length_min} nucleotides')
+print(f'The longest contig is ID: {key_max} with {length_max} nucleotides')
+
+### Question 4: Total contig count 
+
